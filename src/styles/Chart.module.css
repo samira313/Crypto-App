@@ -1,0 +1,39 @@
+.chartContainer {
+    background: linear-gradient(145deg, #0e0e2c, #1a1a3d);
+    padding: 2rem;
+    margin: 10px auto;
+    max-width: 800px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    color: #f8f8f8;
+    text-align: center;
+  }
+  
+  .chartTitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #f39c12;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+.backButton {
+    margin-top: 2rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: #f39c12;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s ease;
+  }
+  
+  .backButton:hover {
+    background-color: #633007;
+  }
+  @media screen and (max-width: 600px) {
+    .backButton {
+      padding: 5px 10px;
+      font-size: 0.85rem;
+    }
+  }

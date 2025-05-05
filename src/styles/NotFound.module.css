@@ -1,0 +1,41 @@
+.fullscreenContainer {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .fullscreenImage {
+    width: 100%;
+    height: 100%;
+ 
+  }
+  
+  .goHomeButton {
+    position: absolute;
+    bottom: 4%;
+    left: 45%;
+    transform: translateX(-50%);
+    padding: 12px 24px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #f39c12;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+  }
+  
+  .goHomeButton:hover {
+    background-color: #633007;
+  }
+  .goHomeButton:hover {
+    background-color: #633007;
+  }
+  @media screen and (max-width: 600px) {
+    .goHomeButton {
+      padding: 5px 10px;
+      font-size: 0.85rem;
+    }
+  }

@@ -1,0 +1,118 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh; 
+    padding: 2rem;
+    background: linear-gradient(145deg, #10101a, #2c2c3d);
+    min-height: 80vh;
+    border-radius: 15px;
+    color: #f8f8f8;
+    box-shadow: 0 0 20px rgba(46, 45, 45, 0.3);
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #ff4d6d;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .favoriteList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+  
+  .card {
+    position: relative;
+    background-color: #0d0f20;
+    border-radius: 12px;
+    padding: 1rem;
+    width: 220px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(255, 105, 135, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(255, 105, 135, 0.4);
+  }
+  
+  .card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 1rem;
+  }
+  
+  .card h3 {
+    margin: 0;
+    color: #ffffff;
+  }
+  
+  .card p {
+    color: #ccc;
+    font-size: 0.9rem;
+  }
+  
+  .emptyMessage {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #ff4d6d;
+    margin-top: 3rem;
+  }
+  .backButton {
+    align-self: flex-start; 
+    margin-top: auto;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: #f39c12;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s ease;
+  }
+  
+  .backButton:hover {
+    background-color: #633007;
+  }
+
+  .removeBtn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: #ff4d4f;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .removeBtn:hover {
+    background-color: #d9363e;
+  }
+
+
+  .backButton:hover {
+    background-color: #633007;
+  }
+  @media screen and (max-width: 600px) {
+    .backButton {
+      padding: 5px ;
+      font-size: 0.6rem;
+    }
+    .title {
+      font-size: 1.2rem;
+    }
+    .card {
+      width: 180px;
+    }
+  }
