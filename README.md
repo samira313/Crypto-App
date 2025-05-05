@@ -54,7 +54,7 @@ Welcome to Crypto App — a React.js-based cryptocurrency tracker where users ca
 
 
 ### Live Demo
-[name](url)
+[crypto](https://zippy-biscochitos-71453c.netlify.app/)
 
 ### Author
 
