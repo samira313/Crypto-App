@@ -1,4 +1,4 @@
-import TableCoin from '../modules/tableCoin';
+import TableCoin from '../modules/TableCoin';
 import { getCoinList } from '../../services/cryptoApi';
 import Pagination from '../modules/Pagination';
 import Search from '../modules/Search';
