@@ -52,6 +52,7 @@ Welcome to Crypto App — a React.js-based cryptocurrency tracker where users ca
 
 - [CoinGecko API Documentation](https://www.coingecko.com/en/api/documentation)
 
+
 ### Live Demo
 [name](url)
 
