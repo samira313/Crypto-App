@@ -1,11 +1,11 @@
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100vh; 
+    justify-content:  flex-start;
+    height: auto; 
     padding: 2rem;
     background: linear-gradient(145deg, #10101a, #2c2c3d);
-    min-height: 80vh;
+    min-height: 100vh;
     border-radius: 15px;
     color: #f8f8f8;
     box-shadow: 0 0 20px rgba(46, 45, 45, 0.3);
@@ -117,5 +117,6 @@
     }
     .favoriteList {
       grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
     }
   }
