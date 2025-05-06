@@ -1,8 +1,9 @@
 .chartContainer {
     background: linear-gradient(145deg, #0e0e2c, #1a1a3d);
     padding: 2rem;
-    margin: 10px auto;
+    margin: 2rem auto;
     max-width: 800px;
+    min-height: 60vh;
     border-radius: 15px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
     color: #f8f8f8;
@@ -32,8 +33,16 @@
     background-color: #633007;
   }
   @media screen and (max-width: 600px) {
+    .chartContainer {
+      padding: 1rem 0;
+      min-height: 70vh;
+      margin-top: 2rem ;
+    }
     .backButton {
       padding: 5px 10px;
       font-size: 0.85rem;
+    }
+    .chartTitle {
+      font-size: 1.2rem;
     }
   }

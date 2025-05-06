@@ -1,11 +1,15 @@
+.page {
+  min-height: 100vh; 
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(145deg, #10101a, #2c2c3d);
+}
+
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content:  flex-start;
-    height: auto; 
+    flex: 1;
     padding: 2rem;
     background: linear-gradient(145deg, #10101a, #2c2c3d);
-    min-height: 100vh;
     border-radius: 15px;
     color: #f8f8f8;
     box-shadow: 0 0 20px rgba(46, 45, 45, 0.3);
@@ -66,7 +70,7 @@
   }
   .backButton {
     align-self: flex-start; 
-    margin-top: auto;
+    margin-top: 3rem;
     padding: 10px 20px;
     border-radius: 8px;
     background-color: #f39c12;

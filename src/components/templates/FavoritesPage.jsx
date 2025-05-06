@@ -8,6 +8,7 @@ function FavoritesPage() {
   const navigate = useNavigate()
 
   return (
+  <div className={styles.page}>
     <div className={styles.container}>
       <h1 className={styles.title}>Your Favorite Coins ❤️</h1>
 
@@ -47,6 +48,7 @@ function FavoritesPage() {
           </button>
       
     </div>
+   </div>
   );
 }
 
