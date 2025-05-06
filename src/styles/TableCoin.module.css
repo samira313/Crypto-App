@@ -96,9 +96,13 @@
     font-size: 0.9rem;
    }
    .symbol img {
-    width: 18px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
    }
+    .chartIcon {
+      width: 40px;
+      height: 30px;
+    }
 }
 
 .link {
@@ -124,8 +128,8 @@
     }
   
     .table img {
-      width: 16px;
-      height: 16px;
+      width: 30px;
+      height: 30px;
     }
   
     .favoriteBtn {

@@ -13,14 +13,13 @@ function HomePage() {
     return getCoinList(page, currency);
   }, [page, currency]);
 
-
   const { data: coins, loading: isLoading, error } = useFetch(fetchCoins, [page, currency]);
 
   if (error) return <p style={{ color: "red" }}>Error: {error}</p>;
 
   return (
     <div>
-      <Search currency={currency} setCurrency={setCurrency} />
+      <Search currency={currency} setCurrency={setCurrency} allCoins={coins || []} />
       <TableCoin coins={coins || []} isLoading={isLoading} currency={currency} />
       <Pagination page={page} setPage={setPage} />
     </div>

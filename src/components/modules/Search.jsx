@@ -1,20 +1,15 @@
 import React, { useState } from 'react';
-import { searchCoin } from '../../services/cryptoApi';
-import { PulseLoader } from 'react-spinners';
 import styles from '../../styles/Search.module.css';
 import { Link } from 'react-router-dom';
-import useFetch from '../../hooks/useFetch';
-import { useCallback } from 'react';
 
-function Search({ currency, setCurrency }) {
+
+function Search({ currency, setCurrency, allCoins }) {
   const [text, setText] = useState('');
 
-  const fetchSearchCoins = useCallback(() => {
-    return text.trim() ? searchCoin(currency, text) : Promise.resolve({ coins: [] });
-  }, [currency, text]);
-  
-  const { data, loading } = useFetch(fetchSearchCoins, [currency, text]);
-  
+  const filteredCoins = allCoins.filter((coin) =>
+    coin.name.toLowerCase().includes(text.toLowerCase()) ||
+    coin.symbol.toLowerCase().includes(text.toLowerCase())
+  );
 
   return (
     <div className={styles.searchBox}>
@@ -30,26 +25,22 @@ function Search({ currency, setCurrency }) {
         <option value="JPY">JPY</option>
       </select>
 
-
-      {(!!data?.coins?.length || loading) && (
+      {text && (
         <div className={styles.searchResult}>
-          {loading && (
-            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
-              <PulseLoader color="#f39c12" size={15} />
-            </div>
-          )}
-          <ul>
-            {data?.coins?.map((coin) => (
-              coin.id && (
+          {filteredCoins.length > 0 ? (
+            <ul>
+              {filteredCoins.map((coin) => (
                 <li key={coin.id}>
                   <Link to={`/coins/${coin.id}`}>
-                    <img src={coin.thumb} alt={coin.name} />
+                    <img src={coin.image} alt={coin.name} />
                     <p>{coin.name}</p>
                   </Link>
                 </li>
-              )
-            ))}
-          </ul>
+              ))}
+            </ul>
+          ) : (
+            <p>No coins found.</p>
+          )}
         </div>
       )}
     </div>
