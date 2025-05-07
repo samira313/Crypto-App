@@ -33,7 +33,7 @@
 .symbol {
     display: flex;
     align-items: center;
-    cursor: pointer;
+
 }
 .symbol img {
     width: 25px;
