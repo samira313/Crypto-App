@@ -3,7 +3,8 @@ import chartDown from "../../assets/chart-down.svg";
 import styles from "../../styles/TableCoin.module.css"
 import getCurrencySymbol from "../../utils/getCurrencySymbol";
 import { Link, useNavigate } from "react-router-dom";
-import { useFavorites } from '../../context/FavoritesContext';
+import useFavorites from '../../hooks/useFavorites';
+
 
 const TableRow = ({
   

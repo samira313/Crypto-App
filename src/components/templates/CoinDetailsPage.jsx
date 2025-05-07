@@ -8,7 +8,8 @@ function CoinDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
 
-
+ 
+  
   const fetchCoin = useCallback(() => getCoinDetails(id), [id]);
   const { data: coin, loading: isLoading, error } = useFetch(fetchCoin, [id]);
 
@@ -18,6 +19,7 @@ function CoinDetails() {
 
   return (
     <div className={styles.container}>
+   
       <h1 className={styles.title}>{coin.name}</h1>
       <img src={coin.image.large} alt={coin.name} className={styles.image} />
       <p className={styles.detail}><strong>Symbol:</strong> {coin.symbol.toUpperCase()}</p>
@@ -28,8 +30,9 @@ function CoinDetails() {
         <strong>Description:</strong><br />
         <span dangerouslySetInnerHTML={{ __html: coin.description.en }} />
       </div>
-      <button onClick={() => navigate('/')} className={styles.backButton}>
-        ⬅ Back to Home
+      <button
+          onClick={() => navigate('/')} className={styles.backButton}>
+            ⬅ Back to Home
       </button>
     </div>
   );

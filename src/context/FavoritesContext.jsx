@@ -1,14 +1,12 @@
-import { createContext, useContext, useState, useEffect, useMemo } from "react";
+import { createContext, useState, useEffect } from "react";
 
 const FavoritesContext = createContext();
 
 export const FavoritesProvider = ({ children }) => {
-
   const [favorites, setFavorites] = useState(() => {
     const storedFavorites = localStorage.getItem("favorites");
     return storedFavorites ? JSON.parse(storedFavorites) : [];
   });
-
 
   useEffect(() => {
     localStorage.setItem("favorites", JSON.stringify(favorites));
@@ -24,20 +22,11 @@ export const FavoritesProvider = ({ children }) => {
     setFavorites((prev) => prev.filter((item) => item.id !== id));
   };
 
-
-  const contextValue = useMemo( () => ({ 
-      favorites, 
-      addToFavorites,
-      removeFromFavorites 
-    }),
-     [favorites]
-  );
-
   return (
-    <FavoritesContext.Provider value={contextValue}>
+    <FavoritesContext.Provider value={{ favorites, addToFavorites, removeFromFavorites }}>
       {children}
     </FavoritesContext.Provider>
   );
 };
 
-export const useFavorites = () => useContext(FavoritesContext);
+export default FavoritesContext;

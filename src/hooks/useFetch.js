@@ -1,17 +1,15 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 
-function useFetch(fetchFunction, deps = []) {
+function useFetch(fetchFunction) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
-  const memoizedFetchFunction = useCallback(fetchFunction, deps);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const result = await memoizedFetchFunction();
+        const result = await fetchFunction();
         setData(result);
       } catch (err) {
         console.error('Fetching Error:', err);
@@ -22,7 +20,7 @@ function useFetch(fetchFunction, deps = []) {
     };
 
     fetchData();
-  }, [memoizedFetchFunction]);
+  }, [fetchFunction]);
 
   return { data, loading, error };
 }

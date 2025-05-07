@@ -3,11 +3,14 @@ import { Line } from 'react-chartjs-2';
 import { useParams, useNavigate } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
 import styles from '../../styles/Chart.module.css';
+import { useCallback } from 'react';
 
 function ChartPage() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { data: chartData, loading, error } = useFetch(() => getCoinChart(id));
+
+  const fetchCharData = useCallback(() => getCoinChart(id), [id]);
+  const { data: chartData, loading, error } = useFetch(fetchCharData);
 
   if (loading) return <p>Loading chart...</p>;
   if (error) return <p>Something went wrong...</p>;
